@@ -5,7 +5,8 @@ A Streamlit prototype for a student portal redesign. This is a design demo and i
 ## Contents
 
 - `TASK2.py` — the Streamlit app
-- `.streamlit/config.toml` — light theme and high-contrast colors
+- `assets/hitam-logo.png` — logo image supplied for this concept
+- `.streamlit/config.toml` — green, high-contrast theme
 - `requirements.txt` — pinned Streamlit dependency
 
 All student, academic, timetable, results, transport, and hostel details are illustrative sample data. They are not live HITAM records.

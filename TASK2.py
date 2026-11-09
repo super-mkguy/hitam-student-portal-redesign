@@ -1,4 +1,8 @@
+from pathlib import Path
+
 import streamlit as st
+
+LOGO_PATH = Path(__file__).parent / "assets" / "hitam-logo.png"
 
 st.set_page_config(
     page_title="HITAM Student Portal",
@@ -9,10 +13,10 @@ st.set_page_config(
 st.markdown("""
 <style>
 .stApp {
-    background-color: #F4F7FB;
+    background-color: #F4F8F4;
 }
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #142B4A 0%, #10243E 100%);
+    background: linear-gradient(180deg, #155B37 0%, #103D2B 100%);
 }
 [data-testid="stSidebar"] * {
     color: white;
@@ -21,38 +25,67 @@ st.markdown("""
 [data-testid="stSidebar"] [data-testid="stRadio"] label * {
     font-size: 1.2rem !important;
 }
+[data-testid="stSidebar"] [data-testid="stRadio"] label {
+    border-radius: 0.7rem;
+    padding: 0.25rem 0.4rem;
+    transition: background-color 160ms ease, transform 160ms ease;
+}
+[data-testid="stSidebar"] [data-testid="stRadio"] label:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: translateX(2px);
+}
 h1, h2, h3, h4 {
-    color: #000000;
+    color: #17251C;
 }
 div[data-testid="stMetric"] {
     background: #FFFFFF;
     padding: 20px;
     border-radius: 16px;
-    border: 1px solid #E2E8F0;
-    box-shadow: 0 4px 14px rgba(20, 43, 74, 0.06);
+    border: 1px solid #DCE9DE;
+    box-shadow: 0 4px 14px rgba(21, 91, 55, 0.07);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+div[data-testid="stMetric"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(21, 91, 55, 0.13);
+}
+.stButton > button {
+    border-radius: 0.75rem;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.stButton > button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(31, 137, 65, 0.18);
 }
 .welcome {
-    background: linear-gradient(120deg, #142B4A 0%, #245081 100%);
+    background: linear-gradient(120deg, #155B37 0%, #1F8941 100%);
     color: white;
     padding: 30px 34px;
     border-radius: 18px;
-    box-shadow: 0 10px 28px rgba(20, 43, 74, 0.14);
+    box-shadow: 0 10px 28px rgba(21, 91, 55, 0.16);
 }
 .welcome h2 {
     color: white;
     margin-bottom: 0.25rem;
 }
 .welcome p {
-    color: #E8F0FA;
+    color: #E8F4E9;
     margin-bottom: 0;
 }
 .welcome .eyebrow {
-    color: #BBD2EE;
+    color: #D0EBD5;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 </style>
 """, unsafe_allow_html=True)
@@ -89,6 +122,13 @@ page = st.sidebar.radio(
 
 st.sidebar.divider()
 st.sidebar.caption("A clear view of your campus life.")
+
+with st.container(horizontal=True, vertical_alignment="center"):
+    st.image(str(LOGO_PATH), width=68, alt="HITAM tree logo")
+    with st.container():
+        st.title("HITAM Student Portal")
+        st.caption("Hyderabad Institute of Technology and Management")
+st.space("small")
 
 if page == "Dashboard":
     st.markdown("""
