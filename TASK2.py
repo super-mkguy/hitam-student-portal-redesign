@@ -17,8 +17,9 @@ st.markdown("""
 [data-testid="stSidebar"] * {
     color: white;
 }
-[data-testid="stSidebar"] [data-testid="stRadio"] label {
-    font-size: 1.125rem !important;
+[data-testid="stSidebar"] [data-testid="stRadio"] label,
+[data-testid="stSidebar"] [data-testid="stRadio"] label * {
+    font-size: 1.2rem !important;
 }
 h1, h2, h3, h4 {
     color: #000000;
