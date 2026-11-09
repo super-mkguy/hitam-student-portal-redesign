@@ -86,10 +86,6 @@ page = st.sidebar.radio(
 st.sidebar.divider()
 st.sidebar.caption("A clear view of your campus life.")
 
-st.badge("REDESIGN PREVIEW · SAMPLE DATA", color="blue")
-st.caption("Illustrative sample data — not live student records.")
-st.space("small")
-
 if page == "Dashboard":
     st.markdown("""
     <div class="welcome">
@@ -147,7 +143,7 @@ if page == "Dashboard":
 
 elif page == "Academic Calendar":
     st.title("Academic calendar", icon=":material/calendar_month:")
-    st.write("Key dates for the sample 2026–27 academic year.")
+    st.write("Key dates for the 2026–27 academic year.")
     st.dataframe(
         [
             {"Start date": "17 Aug 2026", "End date": "10 Oct 2026", "Description": "First spell of instructions"},
@@ -161,7 +157,7 @@ elif page == "Academic Calendar":
 
 elif page == "Time Table":
     st.title("Weekly time table", icon=":material/calendar_view_week:")
-    st.write("A sample weekly schedule, laid out by time and day.")
+    st.write("A weekly schedule, laid out by time and day.")
     st.dataframe(
         [
             {"Time": "09:00–10:00", "Monday": "Data Structures", "Tuesday": "Database Systems", "Wednesday": "Operating Systems", "Thursday": "Computer Networks", "Friday": "DS Lab"},
@@ -174,7 +170,6 @@ elif page == "Time Table":
         width="stretch",
         hide_index=True,
     )
-    st.info("Times and subjects are illustrative sample data for this redesign.", icon=":material/info:")
 
 elif page == "Assignments":
     st.title("Class assignments", icon=":material/assignment:")
@@ -198,7 +193,7 @@ elif page == "Assignments":
 elif page == "Attendance":
     st.title("Attendance", icon=":material/bar_chart:")
     st.metric("Overall attendance", "92%", delta="Above the 75% target")
-    st.progress(0.92, text="Across all sample courses")
+    st.progress(0.92, text="Across all courses")
     st.dataframe(
         [
             {"Course": "Data Structures", "Classes attended": "23 / 25", "Attendance": "92%"},
@@ -213,7 +208,7 @@ elif page == "Attendance":
 
 elif page == "Results":
     st.title("Examination results", icon=":material/school:")
-    st.metric("Term GPA", "8.4", delta="Sample semester result")
+    st.metric("Term GPA", "8.4", delta="Current term")
     st.dataframe(
         [
             {"Course": "Data Structures", "Score": "86 / 100", "Grade": "A"},
@@ -229,7 +224,7 @@ elif page == "Results":
 
 elif page == "Transport":
     st.title("Transport", icon=":material/directions_bus:")
-    st.write("Sample route and subscription details for the portal preview.")
+    st.write("Route and subscription details.")
     t1, t2, t3 = st.columns(3)
     t1.metric("Subscription", "Active")
     t2.metric("Route", "05")
@@ -242,7 +237,7 @@ elif page == "Transport":
 
 elif page == "Hostel":
     st.title("Hostel services", icon=":material/home:")
-    st.write("Sample residence details and request status.")
+    st.write("Residence details and request status.")
     h1, h2, h3 = st.columns(3)
     h1.metric("Residence", "Hall C")
     h2.metric("Room", "204")
@@ -250,7 +245,7 @@ elif page == "Hostel":
     with st.container(border=True):
         st.subheader("Current residence")
         st.markdown("**Hall C · Room 204**")
-        st.caption("Sample accommodation record · Requests for the next term open 1 December.")
+        st.caption("Requests for the next term open 1 December.")
         st.badge("Active", color="green")
 
 elif page == "Feedback":
@@ -266,13 +261,13 @@ elif page == "Feedback":
         if term == "Select term":
             st.warning("Please select an academic term.")
         else:
-            st.success("Thanks! Your sample feedback is ready. This preview does not send it to the college.")
+            st.success("Thanks! Your feedback is ready. It is not sent or saved to the college system.")
 
 elif page == "Profile":
     st.title("Student profile", icon=":material/person:")
-    st.write("A sample profile card. Replace these placeholders with approved student information before a real launch.")
+    st.write("Profile overview.")
     p1, p2, p3 = st.columns(3)
-    p1.metric("Student", "Demo Student")
+    p1.metric("Student", "Student Name")
     p2.metric("Program", "B.Tech CSE")
     p3.metric("Year", "2nd year")
     with st.container(border=True):
@@ -280,8 +275,8 @@ elif page == "Profile":
         email = st.text_input("Email address", placeholder="name@example.edu")
         mobile = st.text_input("Mobile number", placeholder="Enter a contact number")
         if st.button("Update details", icon=":material/save:"):
-            st.success("Demo only: profile details are not connected to HITAM.")
+            st.success("This profile form is a concept and is not connected to HITAM.")
 
 st.divider()
-st.caption("HITAM Student Portal  ·  UI/UX redesign concept  ·  Sample data throughout")
+st.caption("Concept prototype · Information is illustrative and not connected to HITAM systems.")
 
