@@ -1,0 +1,17 @@
+[theme]
+base = "light"
+primaryColor = "#142B4A"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F4F7FB"
+textColor = "#000000"
+borderColor = "#D0D7DE"
+headingFontWeights = [700, 700, 600, 500, 500, 500]
+
+[theme.sidebar]
+backgroundColor = "#142B4A"
+secondaryBackgroundColor = "#1C3A61"
+textColor = "#FFFFFF"
+codeTextColor = "#FFFFFF"
+borderColor = "#28486F"
+primaryColor = "#60A5FA"
+linkColor = "#93C5FD"
