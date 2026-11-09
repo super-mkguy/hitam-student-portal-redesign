@@ -123,11 +123,9 @@ page = st.sidebar.radio(
 st.sidebar.divider()
 st.sidebar.caption("A clear view of your campus life.")
 
-with st.container(horizontal=True, vertical_alignment="center"):
-    st.image(str(LOGO_PATH), width=68, alt="HITAM tree logo")
-    with st.container():
-        st.title("HITAM Student Portal")
-        st.caption("Hyderabad Institute of Technology and Management")
+st.image(str(LOGO_PATH), width=68, alt="HITAM tree logo")
+st.title("HITAM Student Portal")
+st.caption("Hyderabad Institute of Technology and Management")
 st.space("small")
 
 if page == "Dashboard":
