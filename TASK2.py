@@ -6,7 +6,7 @@ LOGO_PATH = Path(__file__).parent / "assets" / "hitam-logo.png"
 
 st.set_page_config(
     page_title="HITAM Student Portal",
-    page_icon="🎓",
+    page_icon=str(LOGO_PATH),
     layout="wide",
 )
 
@@ -55,10 +55,10 @@ div[data-testid="stMetric"]:hover {
 }
 .stButton > button:hover {
     transform: translateY(-1px);
-    box-shadow: 0 5px 14px rgba(31, 137, 65, 0.18);
+    box-shadow: 0 5px 14px rgba(77, 176, 60, 0.2);
 }
 .welcome {
-    background: linear-gradient(120deg, #155B37 0%, #1F8941 100%);
+    background: linear-gradient(120deg, #155B37 0%, #4DB03C 100%);
     color: white;
     padding: 30px 34px;
     border-radius: 18px;
@@ -108,7 +108,7 @@ menu_icons = {
     "Profile": "person",
 }
 
-st.sidebar.title("🎓 HITAM")
+st.sidebar.image(str(LOGO_PATH), width=84, alt="HITAM tree logo")
 st.sidebar.caption("STUDENT PORTAL  ·  AY 2026–27")
 st.sidebar.divider()
 

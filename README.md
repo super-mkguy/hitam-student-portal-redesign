@@ -5,7 +5,7 @@ A Streamlit prototype for a student portal redesign. This is a design demo and i
 ## Contents
 
 - `TASK2.py` — the Streamlit app
-- `assets/hitam-logo.png` — logo image supplied for this concept
+- `assets/hitam-logo.png` — HITAM logo from the [official website](https://hitam.org/)
 - `.streamlit/config.toml` — green, high-contrast theme
 - `requirements.txt` — pinned Streamlit dependency
 
