@@ -44,7 +44,27 @@ flowchart TD
 
 The diagram is intentionally low fidelity: it focuses on hierarchy, labels, content grouping, and state changes rather than final brand styling.
 
-![Annotated mobile-first attendance wireframes and desktop adaptation](docs/task-03-attendance-wireframes.svg)
+### Mobile screens
+
+**01 · Dashboard entry**
+
+![Mobile dashboard wireframe](docs/task-03-mobile-01-dashboard.svg)
+
+**02 · Attendance overview and course choice**
+
+![Mobile attendance overview wireframe](docs/task-03-mobile-02-attendance-list.svg)
+
+**03 · Course detail and next steps**
+
+![Mobile course detail wireframe](docs/task-03-mobile-03-course-detail.svg)
+
+**04 · Data unavailable error**
+
+![Mobile error state wireframe](docs/task-03-mobile-04-error-state.svg)
+
+### Desktop adaptation
+
+![Desktop attendance overview adaptation](docs/task-03-desktop-adaptation.svg)
 
 ## Interaction and accessibility notes
 

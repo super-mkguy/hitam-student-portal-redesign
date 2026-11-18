@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+  <title id="title">Desktop attendance overview adaptation</title>
+  <desc id="desc">A desktop student portal layout with persistent navigation, an attendance summary, course list, selected-course details, target context, and next steps.</desc>
+  <defs><style>
+    .bg{fill:#f3f6f4}.ink{fill:#17251c}.muted{fill:#5f6c63}.green{fill:#175b37}.pale{fill:#e8f2e9}.white{fill:#fff}.border{stroke:#cad6ce;stroke-width:2}.head{font:700 21px Arial,sans-serif;fill:#17251c}.body{font:16px Arial,sans-serif;fill:#27372c}.small{font:14px Arial,sans-serif;fill:#5f6c63}.on{font:700 14px Arial,sans-serif;fill:#175b37}.warn{font:700 14px Arial,sans-serif;fill:#8b3026}.brand{font:700 17px Arial,sans-serif;fill:#fff}.nav{font:16px Arial,sans-serif;fill:#fff}
+  </style></defs>
+  <rect class="bg" width="1200" height="510" rx="18"/>
+  <rect width="1200" height="58" rx="18" fill="#202a23"/><rect y="39" width="1200" height="19" fill="#202a23"/>
+  <text x="28" y="37" class="brand">HITAM STUDENT PORTAL</text><text x="1080" y="37" class="brand">Profile ◉</text>
+  <rect x="0" y="58" width="205" height="452" class="green"/>
+  <text x="25" y="100" class="brand">MAIN MENU</text>
+  <text x="43" y="147" class="nav">Dashboard</text>
+  <rect x="16" y="166" width="173" height="42" rx="9" class="pale"/><text x="43" y="193" class="head" style="font-size:16px">Attendance</text>
+  <text x="43" y="245" class="nav">Academic calendar</text><text x="43" y="292" class="nav">Time table</text><text x="43" y="339" class="nav">Assignments</text><text x="43" y="386" class="nav">Profile</text>
+  <rect x="230" y="82" width="940" height="94" rx="15" class="pale"/>
+  <text x="258" y="120" class="head" style="font-size:24px">Attendance overview</text><text x="258" y="151" class="body">Term 1 · Overall 92% · Select a course to see status and next steps.</text>
+  <rect x="230" y="198" width="450" height="277" rx="14" class="white border"/><text x="254" y="237" class="head">Your courses</text>
+  <rect x="250" y="256" width="410" height="75" rx="10" fill="#fff1ee"/><text x="270" y="285" class="head" style="font-size:17px">Data Structures</text><text x="270" y="311" class="small">9 of 14 classes · 68%</text><text x="540" y="296" class="warn">Below target ›</text>
+  <rect x="250" y="342" width="410" height="75" rx="10" fill="#f6f9f6"/><text x="270" y="371" class="head" style="font-size:17px">Database Systems</text><text x="270" y="397" class="small">22 of 25 classes · 88%</text><text x="555" y="382" class="on">On track ›</text>
+  <rect x="698" y="198" width="472" height="277" rx="14" class="white border"/><text x="722" y="237" class="head">Selected course · Data Structures</text>
+  <text x="722" y="282" class="body">68% · 9 attended out of 14 held</text><text x="722" y="316" class="small">75% example target — verify HITAM policy.</text>
+  <rect x="722" y="337" width="410" height="11" rx="6" fill="#dce6dd"/><rect x="722" y="337" width="279" height="11" rx="6" fill="#c45b4e"/>
+  <text x="722" y="382" class="body">Suggested next steps</text>
+  <rect x="722" y="400" width="198" height="48" rx="10" class="green"/><text x="746" y="430" class="brand" style="font-size:15px">Upcoming classes</text>
+  <rect x="932" y="400" width="201" height="48" rx="10" fill="#fff" stroke="#aab8ad" stroke-width="2"/><text x="974" y="430" class="head" style="font-size:15px">Contact advisor</text>
+</svg>

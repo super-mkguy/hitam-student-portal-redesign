@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1800" viewBox="1120 278 450 900" role="img" aria-labelledby="title desc">
+  <title id="title">Mobile 03 — Course detail and next steps</title>
+  <desc id="desc">Three mobile-first low fidelity wireframes for dashboard entry, course attendance choice, and course detail with a recovery state, plus a desktop adaptation.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f3f6f4}.ink{fill:#17251c}.muted{fill:#5f6c63}.green{fill:#175b37}.lime{fill:#e8f2e9}.line{stroke:#c7d3ca;stroke-width:2}.white{fill:#fff}.panel{fill:#fff;stroke:#cad6ce;stroke-width:2}.title{font:700 40px Arial,sans-serif;fill:#17251c}.sub{font:20px Arial,sans-serif;fill:#5f6c63}.section{font:700 25px Arial,sans-serif;fill:#175b37}.phone{fill:#fff;stroke:#8d9d91;stroke-width:4}.screenTitle{font:700 18px Arial,sans-serif;fill:#17251c}.body{font:16px Arial,sans-serif;fill:#27372c}.small{font:14px Arial,sans-serif;fill:#5f6c63}.tiny{font:12px Arial,sans-serif;fill:#5f6c63}.bold{font:700 16px Arial,sans-serif;fill:#17251c}.whiteText{font:700 16px Arial,sans-serif;fill:#fff}.call{font:15px Arial,sans-serif;fill:#27372c}.number{font:700 16px Arial,sans-serif;fill:#fff}.tag{font:700 12px Arial,sans-serif;fill:#175b37}.error{fill:#fff1ee;stroke:#cb796c;stroke-width:2}.badText{fill:#8b3026;font:700 14px Arial,sans-serif}.dash{stroke:#175b37;stroke-width:2;stroke-dasharray:7 7;fill:none}
+    </style>
+  </defs>
+  <rect class="bg" width="2400" height="1810"/>
+  <text x="74" y="82" class="title">HITAM Student Portal</text>
+  <text x="74" y="121" class="sub">Task 03 · Attendance journey · Low-fidelity responsive wireframes</text>
+  <rect x="1770" y="52" width="555" height="48" rx="24" class="lime"/>
+  <text x="1795" y="82" class="tag">ILLUSTRATIVE CONTENT · 75% TARGET NEEDS POLICY CHECK</text>
+  <line x1="74" y1="150" x2="2325" y2="150" class="line"/>
+
+  <text x="78" y="205" class="section">01 — Mobile journey (390 px screen concept)</text>
+  <text x="78" y="236" class="sub">Start on the dashboard, compare course status, then choose a useful next step.</text>
+
+  <!-- phone 1 -->
+  <rect x="80" y="278" width="430" height="795" rx="35" class="phone"/>
+  <rect x="98" y="296" width="394" height="759" rx="23" fill="#f8faf8"/>
+  <rect x="98" y="296" width="394" height="62" rx="23" class="green"/>
+  <rect x="98" y="338" width="394" height="20" class="green"/>
+  <text x="122" y="335" class="whiteText">☰</text><text x="158" y="335" class="whiteText">HITAM</text><text x="420" y="334" class="whiteText">◉</text>
+  <text x="122" y="397" class="tiny">STUDENT PORTAL</text>
+  <text x="122" y="437" class="screenTitle">Welcome back, Ananya</text>
+  <text x="122" y="466" class="small">Your academic week, at a glance.</text>
+  <rect x="120" y="493" width="350" height="119" rx="16" class="panel"/>
+  <text x="142" y="526" class="small">OVERALL ATTENDANCE</text><text x="142" y="570" class="screenTitle" style="font-size:34px">92%</text>
+  <text x="242" y="554" class="small">Across 6 courses</text><rect x="142" y="583" width="300" height="10" rx="5" fill="#dce6dd"/><rect x="142" y="583" width="276" height="10" rx="5" fill="#4d9b62"/>
+  <text x="122" y="654" class="screenTitle">Quick access</text>
+  <rect x="120" y="673" width="350" height="70" rx="14" class="lime" stroke="#c7d9ca" stroke-width="2"/>
+  <circle cx="151" cy="708" r="17" fill="#175b37"/><text x="146" y="714" class="number">1</text>
+  <text x="181" y="703" class="bold">Attendance</text><text x="181" y="726" class="tiny">View course breakdown</text><text x="436" y="715" class="bold">›</text>
+  <rect x="120" y="760" width="350" height="70" rx="14" class="panel"/><text x="145" y="802" class="body">Assignments</text><text x="436" y="802" class="bold">›</text>
+  <rect x="120" y="848" width="350" height="70" rx="14" class="panel"/><text x="145" y="890" class="body">Time table</text><text x="436" y="890" class="bold">›</text>
+  <text x="122" y="965" class="tiny">Dashboard · Calendar · Profile</text>
+  <circle cx="82" cy="694" r="18" class="green"/><text x="77" y="700" class="number">1</text>
+  <text x="80" y="1110" class="bold">Entry</text><text x="80" y="1138" class="call">One prominent attendance shortcut</text><text x="80" y="1160" class="call">supports a quick return visit.</text>
+
+  <!-- arrow -->
+  <path d="M520 675 H580" class="dash"/><path d="M570 665 L584 675 L570 685" fill="none" stroke="#175b37" stroke-width="3"/>
+
+  <!-- phone 2 -->
+  <rect x="600" y="278" width="430" height="795" rx="35" class="phone"/>
+  <rect x="618" y="296" width="394" height="759" rx="23" fill="#f8faf8"/>
+  <rect x="618" y="296" width="394" height="62" rx="23" class="green"/><rect x="618" y="338" width="394" height="20" class="green"/>
+  <text x="642" y="335" class="whiteText">‹</text><text x="680" y="335" class="whiteText">Attendance</text><text x="940" y="334" class="whiteText">⋯</text>
+  <text x="642" y="402" class="screenTitle">Course overview</text><text x="642" y="429" class="small">Term 1 · 2026–27</text>
+  <rect x="640" y="452" width="350" height="78" rx="14" class="panel"/><text x="660" y="483" class="small">OVERALL</text><text x="660" y="513" class="bold">92% attended</text><text x="865" y="498" class="tag">6 courses</text>
+  <text x="642" y="573" class="screenTitle">Your courses</text><text x="642" y="600" class="tiny">Select a course to see the calculation.</text>
+  <rect x="640" y="619" width="350" height="83" rx="13" class="panel"/><text x="660" y="651" class="bold">Data Structures</text><text x="660" y="678" class="small">9 of 14 classes · 68%</text><rect x="858" y="635" width="112" height="27" rx="13" fill="#fff1ee"/><text x="871" y="654" class="badText">Below target</text><text x="962" y="684" class="bold">›</text>
+  <rect x="640" y="716" width="350" height="83" rx="13" class="panel"/><text x="660" y="748" class="bold">Database Systems</text><text x="660" y="775" class="small">22 of 25 classes · 88%</text><rect x="858" y="732" width="112" height="27" rx="13" class="lime"/><text x="879" y="751" class="tag">On track</text><text x="962" y="781" class="bold">›</text>
+  <rect x="640" y="813" width="350" height="83" rx="13" class="panel"/><text x="660" y="845" class="bold">Operating Systems</text><text x="660" y="872" class="small">23 of 25 classes · 92%</text><rect x="858" y="829" width="112" height="27" rx="13" class="lime"/><text x="879" y="848" class="tag">On track</text><text x="962" y="878" class="bold">›</text>
+  <text x="642" y="954" class="tiny">Status labels include text; color is supplementary.</text>
+  <circle cx="602" cy="646" r="18" class="green"/><text x="597" y="652" class="number">2</text>
+  <text x="600" y="1110" class="bold">Decision</text><text x="600" y="1138" class="call">Compare course status with target,</text><text x="600" y="1160" class="call">then open the course needing attention.</text>
+
+  <path d="M1040 675 H1100" class="dash"/><path d="M1090 665 L1104 675 L1090 685" fill="none" stroke="#175b37" stroke-width="3"/>
+
+  <!-- phone 3 -->
+  <rect x="1120" y="278" width="430" height="795" rx="35" class="phone"/>
+  <rect x="1138" y="296" width="394" height="759" rx="23" fill="#f8faf8"/>
+  <rect x="1138" y="296" width="394" height="62" rx="23" class="green"/><rect x="1138" y="338" width="394" height="20" class="green"/>
+  <text x="1162" y="335" class="whiteText">‹</text><text x="1200" y="335" class="whiteText">Data Structures</text>
+  <text x="1162" y="401" class="small">ATTENDANCE DETAIL</text><text x="1162" y="440" class="screenTitle" style="font-size:25px">Below your target</text>
+  <rect x="1160" y="462" width="350" height="111" rx="15" class="panel"/>
+  <text x="1182" y="494" class="small">CURRENT ATTENDANCE</text><text x="1182" y="544" class="screenTitle" style="font-size:40px">68%</text><text x="1307" y="533" class="body">9 attended / 14 held</text>
+  <text x="1162" y="613" class="bold">Target comparison</text><text x="1162" y="640" class="small">75% example target · confirm HITAM policy</text>
+  <rect x="1162" y="660" width="320" height="12" rx="6" fill="#dce6dd"/><rect x="1162" y="660" width="218" height="12" rx="6" fill="#c45b4e"/>
+  <rect x="1160" y="704" width="350" height="95" rx="14" class="lime"/><text x="1182" y="736" class="bold">What you can do next</text><text x="1182" y="765" class="small">Check upcoming classes and speak with</text><text x="1182" y="785" class="small">your academic advisor if you need help.</text>
+  <rect x="1160" y="817" width="350" height="53" rx="12" class="green"/><text x="1226" y="850" class="whiteText">View upcoming classes</text>
+  <rect x="1160" y="885" width="350" height="53" rx="12" class="panel"/><text x="1235" y="918" class="bold">Contact advisor</text>
+  <text x="1162" y="980" class="tiny">Illustrative records · no live system connection</text>
+  <circle cx="1122" cy="417" r="18" class="green"/><text x="1117" y="423" class="number">3</text>
+  <text x="1120" y="1110" class="bold">Success / action</text><text x="1120" y="1138" class="call">Show the calculation and practical</text><text x="1120" y="1160" class="call">next steps together.</text>
+
+  <!-- error state card -->
+  <rect x="1600" y="278" width="725" height="360" rx="24" class="panel"/>
+  <text x="1635" y="326" class="section">04 — Error / empty state</text>
+  <text x="1635" y="358" class="sub">Keep context and give the student a way forward.</text>
+  <rect x="1635" y="390" width="655" height="124" rx="15" class="error"/>
+  <circle cx="1675" cy="431" r="18" fill="#8b3026"/><text x="1669" y="438" class="number">!</text>
+  <text x="1710" y="426" class="badText">Attendance could not load</text>
+  <text x="1710" y="454" class="body">Your course records aren’t available right now.</text>
+  <text x="1710" y="480" class="small">Try again, or return to the dashboard.</text>
+  <rect x="1635" y="537" width="150" height="52" rx="12" class="green"/><text x="1685" y="570" class="whiteText">Retry</text>
+  <rect x="1800" y="537" width="220" height="52" rx="12" class="panel"/><text x="1845" y="570" class="bold">Back to Dashboard</text>
+  <text x="1635" y="620" class="tiny">If retry fails, keep this message visible and provide a support route.</text>
+
+  <!-- desktop -->
+  <text x="78" y="1250" class="section">02 — Desktop adaptation (1440 px concept)</text>
+  <text x="78" y="1280" class="sub">Same labels and information; persistent navigation and a wider scan layout.</text>
+  <rect x="80" y="1310" width="2245" height="430" rx="22" class="phone"/>
+  <rect x="80" y="1310" width="2245" height="61" rx="22" fill="#202a23"/><rect x="80" y="1349" width="2245" height="22" fill="#202a23"/>
+  <text x="111" y="1350" class="whiteText">HITAM STUDENT PORTAL</text><text x="2150" y="1350" class="whiteText">Profile  ◉</text>
+  <rect x="80" y="1371" width="300" height="369" fill="#175b37"/>
+  <text x="112" y="1418" class="whiteText">MAIN MENU</text>
+  <rect x="101" y="1440" width="256" height="43" rx="10" fill="#2d754a"/><text x="126" y="1468" class="whiteText">Dashboard</text>
+  <rect x="101" y="1492" width="256" height="43" rx="10" fill="#e7f2e9"/><text x="126" y="1520" class="bold">Attendance</text>
+  <text x="126" y="1572" class="whiteText">Academic calendar</text><text x="126" y="1615" class="whiteText">Time table</text><text x="126" y="1658" class="whiteText">Assignments</text><text x="126" y="1701" class="whiteText">Profile</text>
+  <rect x="410" y="1400" width="1870" height="103" rx="17" class="lime"/><text x="445" y="1442" class="screenTitle" style="font-size:25px">Attendance overview</text><text x="445" y="1475" class="body">Term 1 · Overall 92% · Select a course to understand its status and next step.</text>
+  <rect x="410" y="1524" width="900" height="184" rx="15" class="panel"/><text x="440" y="1565" class="screenTitle">Your courses</text>
+  <rect x="438" y="1583" width="844" height="48" rx="9" fill="#fff1ee"/><text x="458" y="1614" class="bold">Data Structures</text><text x="760" y="1614" class="body">9 / 14 classes · 68%</text><text x="1115" y="1614" class="badText">Below target  ›</text>
+  <rect x="438" y="1642" width="844" height="48" rx="9" fill="#f3f7f3"/><text x="458" y="1673" class="bold">Database Systems</text><text x="760" y="1673" class="body">22 / 25 classes · 88%</text><text x="1115" y="1673" class="tag">On track  ›</text>
+  <rect x="1340" y="1524" width="940" height="184" rx="15" class="panel"/><text x="1370" y="1565" class="screenTitle">Selected course · Data Structures</text><text x="1370" y="1605" class="body">68%  ·  9 classes attended out of 14 held</text><text x="1370" y="1640" class="small">75% example target — verify institutional policy.</text>
+  <rect x="1370" y="1660" width="240" height="34" rx="9" class="green"/><text x="1400" y="1683" class="whiteText" style="font-size:14px">Upcoming classes</text>
+  <rect x="1625" y="1660" width="200" height="34" rx="9" class="panel"/><text x="1661" y="1683" class="bold" style="font-size:14px">Contact advisor</text>
+  <text x="80" y="1780" class="tiny">Desktop view preserves the same reading order: page context → course list → selected course detail and actions.</text>
+</svg>
+
