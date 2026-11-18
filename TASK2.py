@@ -104,6 +104,7 @@ if page == "Dashboard":
         ],
         width="stretch",
         hide_index=True,
+        alt="Upcoming academic dates and campus events",
     )
 
 elif page == "Academic Calendar":
@@ -118,6 +119,7 @@ elif page == "Academic Calendar":
         ],
         width="stretch",
         hide_index=True,
+        alt="Academic instruction and examination calendar",
     )
 
 elif page == "Time Table":
@@ -134,6 +136,7 @@ elif page == "Time Table":
         ],
         width="stretch",
         hide_index=True,
+        alt="Weekly class timetable by day and time",
     )
 
 elif page == "Assignments":
@@ -153,6 +156,7 @@ elif page == "Assignments":
         ],
         width="stretch",
         hide_index=True,
+        alt="Assignments with their course, due date, and status",
     )
 
 elif page == "Attendance":
@@ -173,7 +177,7 @@ elif page == "Attendance":
     st.progress(overall / 100, text="Across 6 illustrative courses")
 
     target = st.slider("Preview attendance target", 50, 100, 75, key="attendance_target")
-    st.caption("The target is an example for this prototype; verify the official HITAM policy before using it.")
+    st.write("The target is an example for this prototype; verify the official HITAM policy before using it.")
     selected_course_name = st.selectbox(
         "Choose a course", [str(course["name"]) for course in courses], key="attendance_course"
     )
@@ -183,11 +187,14 @@ elif page == "Attendance":
 
     if simulate_error:
         feedback_state("error", "Attendance records could not load. Retry or return to the dashboard.")
-        st.button(
-            "Retry loading records",
-            icon=":material/refresh:",
-            on_click=_retry_attendance_preview,
-            key="attendance_retry",
+        retry_col, dashboard_col = st.columns(2)
+        retry_col.button(
+            "Retry loading records", icon=":material/refresh:",
+            on_click=_retry_attendance_preview, key="attendance_retry",
+        )
+        dashboard_col.button(
+            "Back to Dashboard", icon=":material/dashboard:",
+            on_click=_set_portal_page, args=("Dashboard",), key="attendance_error_dashboard",
         )
     else:
         st.subheader(str(course["name"]))
@@ -203,10 +210,11 @@ elif page == "Attendance":
                 st.caption("Check the overview again after your next class.")
             else:
                 feedback_state("warning", "This course is below the preview target.")
-                st.caption("Review upcoming classes or ask your academic advisor for guidance.")
+                st.write("Review upcoming classes or ask your academic advisor for guidance.")
                 action, help_action = st.columns(2)
                 action.button(
                     "View time table",
+                    type="primary",
                     icon=":material/calendar_today:",
                     width="stretch",
                     on_click=_set_portal_page,
@@ -222,10 +230,10 @@ elif page == "Attendance":
                     key="attendance_feedback",
                 )
 
-    st.subheader("Course overview")
-    with st.grid("auto", min_column_width=220, gap="small"):
-        for item in courses:
-            render_course_card(item, target)
+        st.subheader("Course overview")
+        with st.grid("auto", min_column_width=220, gap="small"):
+            for item in courses:
+                render_course_card(item, target)
 
 elif page == "Results":
     st.title("Examination results", icon=":material/school:")
@@ -241,6 +249,7 @@ elif page == "Results":
         ],
         width="stretch",
         hide_index=True,
+        alt="Course results, scores, and grades",
     )
 
 elif page == "Transport":
@@ -301,7 +310,7 @@ elif page == "Profile":
 elif page == "Design system":
     st.title("Accessible design system", icon=":material/tune:")
     st.write("A compact HITAM component library, applied in the portal prototype below.")
-    st.caption("Use the examples on this page to explore buttons, inputs, navigation, cards, and feedback states.")
+    st.write("Use the examples on this page to explore buttons, inputs, navigation, cards, and feedback states.")
 
     st.subheader("Color tokens")
     color_rows = [
@@ -318,22 +327,27 @@ elif page == "Design system":
         {"Token": "Error", "Hex": TOKENS["error_text"], "Use": "Text on pale red"},
         {"Token": "Information", "Hex": TOKENS["info_text"], "Use": "Text on pale blue"},
     ]
-    st.dataframe(color_rows, width="stretch", hide_index=True)
+    st.dataframe(
+        color_rows,
+        width="stretch",
+        hide_index=True,
+        alt="HITAM design system color tokens and their use",
+    )
 
     st.subheader("Typography, spacing, and elevation")
     type_col, spacing_col, elevation_col = st.columns(3)
     with type_col.container(border=True):
         st.markdown("**Typography**")
-        st.write("Sans-serif system font. Body text starts at 16 px; captions stay at 14 px or larger.")
-        st.caption("Heading scale: 32 / 24 / 20 / 16 px with semibold-to-bold weights.")
+        st.write("Sans-serif system font. Body and helper instructions use the 16 px text style.")
+        st.write("Heading scale: 32 / 24 / 20 / 16 px with semibold-to-bold weights.")
     with spacing_col.container(border=True):
         st.markdown("**Spacing**")
         st.write("4 · 8 · 12 · 16 · 24 · 32 · 48 px scale.")
-        st.caption("Use generous section spacing; keep related form labels and controls close.")
+        st.write("Use generous section spacing; keep related form labels and controls close.")
     with elevation_col.container(border=True):
         st.markdown("**Elevation**")
         st.write("Flat page canvas, white bordered cards, no decorative shadows.")
-        st.caption("Use spacing and border contrast to show grouping; avoid color-only states.")
+        st.write("Use spacing and border contrast to show grouping; avoid color-only states.")
 
     st.subheader("Reusable components")
     st.markdown("**Buttons** · Use forest green for the main action, a bordered secondary action for alternatives, and a real disabled state when unavailable.")
@@ -364,7 +378,7 @@ elif page == "Design system":
             st.subheader(state[0])
             st.metric("Sample attendance", f"{state[1]}%")
             status_badge(state[1], 75)
-            st.caption(copy)
+            st.write(copy)
 
     st.markdown("**Navigation** · Keep the active selection clear and use familiar Material Symbols in the app menu.")
     nav_sample = st.segmented_control(

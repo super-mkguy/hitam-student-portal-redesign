@@ -29,7 +29,7 @@ All student and academic details are sample content. The prototype does not conn
 ### Typography
 
 - Use the sans-serif system font for body text and headings.
-- Body text starts at 16 px; supporting text is at least 14 px.
+- Body and important helper text use the 16 px text style. Reserve smaller captions for noncritical metadata.
 - Heading sizes: 32, 24, 20, and 16 px, using bold or semibold weights.
 - Use sentence case for page titles, control labels, and buttons.
 

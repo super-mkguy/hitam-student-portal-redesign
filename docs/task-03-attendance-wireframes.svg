@@ -49,7 +49,7 @@
   <text x="642" y="402" class="screenTitle">Course overview</text><text x="642" y="429" class="small">Term 1 · 2026–27</text>
   <rect x="640" y="452" width="350" height="78" rx="14" class="panel"/><text x="660" y="483" class="small">OVERALL</text><text x="660" y="513" class="bold">92% attended</text><text x="865" y="498" class="tag">6 courses</text>
   <text x="642" y="573" class="screenTitle">Your courses</text><text x="642" y="600" class="tiny">Select a course to see the calculation.</text>
-  <rect x="640" y="619" width="350" height="83" rx="13" class="panel"/><text x="660" y="651" class="bold">Data Structures</text><text x="660" y="678" class="small">9 of 14 classes · 68%</text><rect x="858" y="635" width="112" height="27" rx="13" fill="#fff1ee"/><text x="871" y="654" class="badText">Below target</text><text x="962" y="684" class="bold">›</text>
+  <rect x="640" y="619" width="350" height="83" rx="13" class="panel"/><text x="660" y="651" class="bold">Data Structures</text><text x="660" y="678" class="small">9 of 14 classes · 64%</text><rect x="858" y="635" width="112" height="27" rx="13" fill="#fff1ee"/><text x="871" y="654" class="badText">Below target</text><text x="962" y="684" class="bold">›</text>
   <rect x="640" y="716" width="350" height="83" rx="13" class="panel"/><text x="660" y="748" class="bold">Database Systems</text><text x="660" y="775" class="small">22 of 25 classes · 88%</text><rect x="858" y="732" width="112" height="27" rx="13" class="lime"/><text x="879" y="751" class="tag">On track</text><text x="962" y="781" class="bold">›</text>
   <rect x="640" y="813" width="350" height="83" rx="13" class="panel"/><text x="660" y="845" class="bold">Operating Systems</text><text x="660" y="872" class="small">23 of 25 classes · 92%</text><rect x="858" y="829" width="112" height="27" rx="13" class="lime"/><text x="879" y="848" class="tag">On track</text><text x="962" y="878" class="bold">›</text>
   <text x="642" y="954" class="tiny">Status labels include text; color is supplementary.</text>
@@ -65,7 +65,7 @@
   <text x="1162" y="335" class="whiteText">‹</text><text x="1200" y="335" class="whiteText">Data Structures</text>
   <text x="1162" y="401" class="small">ATTENDANCE DETAIL</text><text x="1162" y="440" class="screenTitle" style="font-size:25px">Below your target</text>
   <rect x="1160" y="462" width="350" height="111" rx="15" class="panel"/>
-  <text x="1182" y="494" class="small">CURRENT ATTENDANCE</text><text x="1182" y="544" class="screenTitle" style="font-size:40px">68%</text><text x="1307" y="533" class="body">9 attended / 14 held</text>
+  <text x="1182" y="494" class="small">CURRENT ATTENDANCE</text><text x="1182" y="544" class="screenTitle" style="font-size:40px">64%</text><text x="1307" y="533" class="body">9 attended / 14 held</text>
   <text x="1162" y="613" class="bold">Target comparison</text><text x="1162" y="640" class="small">75% example target · confirm HITAM policy</text>
   <rect x="1162" y="660" width="320" height="12" rx="6" fill="#dce6dd"/><rect x="1162" y="660" width="218" height="12" rx="6" fill="#c45b4e"/>
   <rect x="1160" y="704" width="350" height="95" rx="14" class="lime"/><text x="1182" y="736" class="bold">What you can do next</text><text x="1182" y="765" class="small">Check upcoming classes and speak with</text><text x="1182" y="785" class="small">your academic advisor if you need help.</text>
@@ -101,10 +101,11 @@
   <text x="126" y="1572" class="whiteText">Academic calendar</text><text x="126" y="1615" class="whiteText">Time table</text><text x="126" y="1658" class="whiteText">Assignments</text><text x="126" y="1701" class="whiteText">Profile</text>
   <rect x="410" y="1400" width="1870" height="103" rx="17" class="lime"/><text x="445" y="1442" class="screenTitle" style="font-size:25px">Attendance overview</text><text x="445" y="1475" class="body">Term 1 · Overall 92% · Select a course to understand its status and next step.</text>
   <rect x="410" y="1524" width="900" height="184" rx="15" class="panel"/><text x="440" y="1565" class="screenTitle">Your courses</text>
-  <rect x="438" y="1583" width="844" height="48" rx="9" fill="#fff1ee"/><text x="458" y="1614" class="bold">Data Structures</text><text x="760" y="1614" class="body">9 / 14 classes · 68%</text><text x="1115" y="1614" class="badText">Below target  ›</text>
+  <rect x="438" y="1583" width="844" height="48" rx="9" fill="#fff1ee"/><text x="458" y="1614" class="bold">Data Structures</text><text x="760" y="1614" class="body">9 / 14 classes · 64%</text><text x="1115" y="1614" class="badText">Below target  ›</text>
   <rect x="438" y="1642" width="844" height="48" rx="9" fill="#f3f7f3"/><text x="458" y="1673" class="bold">Database Systems</text><text x="760" y="1673" class="body">22 / 25 classes · 88%</text><text x="1115" y="1673" class="tag">On track  ›</text>
-  <rect x="1340" y="1524" width="940" height="184" rx="15" class="panel"/><text x="1370" y="1565" class="screenTitle">Selected course · Data Structures</text><text x="1370" y="1605" class="body">68%  ·  9 classes attended out of 14 held</text><text x="1370" y="1640" class="small">75% example target — verify institutional policy.</text>
+  <rect x="1340" y="1524" width="940" height="184" rx="15" class="panel"/><text x="1370" y="1565" class="screenTitle">Selected course · Data Structures</text><text x="1370" y="1605" class="body">64%  ·  9 classes attended out of 14 held</text><text x="1370" y="1640" class="small">75% example target — verify institutional policy.</text>
   <rect x="1370" y="1660" width="240" height="34" rx="9" class="green"/><text x="1400" y="1683" class="whiteText" style="font-size:14px">Upcoming classes</text>
   <rect x="1625" y="1660" width="200" height="34" rx="9" class="panel"/><text x="1661" y="1683" class="bold" style="font-size:14px">Contact advisor</text>
   <text x="80" y="1780" class="tiny">Desktop view preserves the same reading order: page context → course list → selected course detail and actions.</text>
 </svg>
+
