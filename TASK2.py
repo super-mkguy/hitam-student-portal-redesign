@@ -2,6 +2,8 @@ from pathlib import Path
 
 import streamlit as st
 
+from design_system import TOKENS, contrast_ratio, feedback_state, render_course_card, status_badge
+
 LOGO_PATH = Path(__file__).parent / "assets" / "hitam-logo.png"
 
 st.set_page_config(
@@ -10,89 +12,12 @@ st.set_page_config(
     layout="wide",
 )
 
-st.markdown("""
-<style>
-.stApp {
-    background-color: #F4F8F4;
-}
-[data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #155B37 0%, #103D2B 100%);
-}
-[data-testid="stSidebar"] * {
-    color: white;
-}
-[data-testid="stSidebar"] [data-testid="stRadio"] label,
-[data-testid="stSidebar"] [data-testid="stRadio"] label * {
-    font-size: 1.2rem !important;
-}
-[data-testid="stSidebar"] [data-testid="stRadio"] label {
-    border-radius: 0.7rem;
-    padding: 0.25rem 0.4rem;
-    transition: background-color 160ms ease, transform 160ms ease;
-}
-[data-testid="stSidebar"] [data-testid="stRadio"] label:hover {
-    background-color: rgba(255, 255, 255, 0.12);
-    transform: translateX(2px);
-}
-h1, h2, h3, h4 {
-    color: #17251C;
-}
-div[data-testid="stMetric"] {
-    background: #FFFFFF;
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid #DCE9DE;
-    box-shadow: 0 4px 14px rgba(21, 91, 55, 0.07);
-    transition: transform 180ms ease, box-shadow 180ms ease;
-}
-div[data-testid="stMetric"]:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(21, 91, 55, 0.13);
-}
-.stButton > button {
-    border-radius: 0.75rem;
-    transition: transform 160ms ease, box-shadow 160ms ease;
-}
-.stButton > button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 14px rgba(77, 176, 60, 0.2);
-}
-.welcome {
-    background: linear-gradient(120deg, #155B37 0%, #4DB03C 100%);
-    color: white;
-    padding: 30px 34px;
-    border-radius: 18px;
-    box-shadow: 0 10px 28px rgba(21, 91, 55, 0.16);
-}
-.welcome h2 {
-    color: white;
-    margin-bottom: 0.25rem;
-}
-.welcome p {
-    color: #E8F4E9;
-    margin-bottom: 0;
-}
-.welcome .eyebrow {
-    color: #D0EBD5;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-}
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-</style>
-""", unsafe_allow_html=True)
-
-
 def _set_portal_page(page_name):
     st.session_state["portal_page"] = page_name
+
+
+def _retry_attendance_preview():
+    st.session_state["simulate_attendance_error"] = False
 
 
 menu_icons = {
@@ -106,6 +31,7 @@ menu_icons = {
     "Hostel": "home",
     "Feedback": "chat",
     "Profile": "person",
+    "Design system": "tune",
 }
 
 st.sidebar.image(str(LOGO_PATH), width=84, alt="HITAM tree logo")
@@ -129,23 +55,20 @@ st.caption("Hyderabad Institute of Technology and Management")
 st.space("small")
 
 if page == "Dashboard":
-    st.markdown("""
-    <div class="welcome">
-        <p class="eyebrow">Student dashboard</p>
-        <h2>Welcome back!</h2>
-        <p>Your academic week, organized in one place.</p>
-    </div>
-    """, unsafe_allow_html=True)
+    with st.container(border=True):
+        st.badge("Student dashboard", icon=":material/dashboard:", color="green")
+        st.header("Welcome back!")
+        st.write("Your academic week, organized in one place.")
 
     st.space("medium")
 
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Attendance", "92%", delta="On track")
+    col1.metric("Attendance", "89%", delta="Across 6 courses")
     col2.metric("Courses", "06", delta="This semester")
     col3.metric("Open assignments", "03", delta="1 due this week")
     col4.metric("Term GPA", "8.4", delta="Current term")
 
-    st.progress(0.92, text="Overall attendance")
+    st.progress(0.89, text="Overall attendance · illustrative sample")
     st.space("small")
 
     st.subheader("Quick access", icon=":material/bolt:")
@@ -234,19 +157,75 @@ elif page == "Assignments":
 
 elif page == "Attendance":
     st.title("Attendance", icon=":material/bar_chart:")
-    st.metric("Overall attendance", "92%", delta="Above the 75% target")
-    st.progress(0.92, text="Across all courses")
-    st.dataframe(
-        [
-            {"Course": "Data Structures", "Classes attended": "23 / 25", "Attendance": "92%"},
-            {"Course": "Database Systems", "Classes attended": "22 / 24", "Attendance": "92%"},
-            {"Course": "Operating Systems", "Classes attended": "21 / 24", "Attendance": "88%"},
-            {"Course": "Mathematics III", "Classes attended": "24 / 25", "Attendance": "96%"},
-            {"Course": "Computer Networks", "Classes attended": "20 / 22", "Attendance": "91%"},
-        ],
-        width="stretch",
-        hide_index=True,
+    st.write("Review the sample course records and choose a course for details.")
+    courses = [
+        {"name": "Data Structures", "attended": 9, "held": 14},
+        {"name": "Database Systems", "attended": 22, "held": 25},
+        {"name": "Operating Systems", "attended": 23, "held": 25},
+        {"name": "Mathematics III", "attended": 24, "held": 25},
+        {"name": "Computer Networks", "attended": 20, "held": 22},
+        {"name": "Software Engineering", "attended": 20, "held": 22},
+    ]
+    total_attended = sum(int(course["attended"]) for course in courses)
+    total_held = sum(int(course["held"]) for course in courses)
+    overall = round(total_attended / total_held * 100)
+    st.metric("Overall attendance", f"{overall}%", delta=f"{total_attended} of {total_held} classes")
+    st.progress(overall / 100, text="Across 6 illustrative courses")
+
+    target = st.slider("Preview attendance target", 50, 100, 75, key="attendance_target")
+    st.caption("The target is an example for this prototype; verify the official HITAM policy before using it.")
+    selected_course_name = st.selectbox(
+        "Choose a course", [str(course["name"]) for course in courses], key="attendance_course"
     )
+    course = next(item for item in courses if item["name"] == selected_course_name)
+    percentage = round(int(course["attended"]) / int(course["held"]) * 100)
+    simulate_error = st.toggle("Preview: simulate unavailable attendance records", key="simulate_attendance_error")
+
+    if simulate_error:
+        feedback_state("error", "Attendance records could not load. Retry or return to the dashboard.")
+        st.button(
+            "Retry loading records",
+            icon=":material/refresh:",
+            on_click=_retry_attendance_preview,
+            key="attendance_retry",
+        )
+    else:
+        st.subheader(str(course["name"]))
+        summary, next_step = st.columns(2, vertical_alignment="top")
+        with summary.container(border=True):
+            st.metric("Current attendance", f"{percentage}%", f'{course["attended"]} of {course["held"]} classes')
+            st.progress(percentage / 100, text="Attendance progress")
+            status_badge(percentage, target)
+        with next_step.container(border=True):
+            st.markdown("**Next step**")
+            if percentage >= target:
+                feedback_state("success", "This course is at or above the preview target.")
+                st.caption("Check the overview again after your next class.")
+            else:
+                feedback_state("warning", "This course is below the preview target.")
+                st.caption("Review upcoming classes or ask your academic advisor for guidance.")
+                action, help_action = st.columns(2)
+                action.button(
+                    "View time table",
+                    icon=":material/calendar_today:",
+                    width="stretch",
+                    on_click=_set_portal_page,
+                    args=("Time Table",),
+                    key="attendance_timetable",
+                )
+                help_action.button(
+                    "Open feedback",
+                    icon=":material/chat:",
+                    width="stretch",
+                    on_click=_set_portal_page,
+                    args=("Feedback",),
+                    key="attendance_feedback",
+                )
+
+    st.subheader("Course overview")
+    with st.grid("auto", min_column_width=220, gap="small"):
+        for item in courses:
+            render_course_card(item, target)
 
 elif page == "Results":
     st.title("Examination results", icon=":material/school:")
@@ -318,6 +297,109 @@ elif page == "Profile":
         mobile = st.text_input("Mobile number", placeholder="Enter a contact number")
         if st.button("Update details", icon=":material/save:"):
             st.success("This profile form is a concept and is not connected to HITAM.")
+
+elif page == "Design system":
+    st.title("Accessible design system", icon=":material/tune:")
+    st.write("A compact HITAM component library, applied in the portal prototype below.")
+    st.caption("Use the examples on this page to explore buttons, inputs, navigation, cards, and feedback states.")
+
+    st.subheader("Color tokens")
+    color_rows = [
+        {"Token": "Forest · primary action", "Hex": TOKENS["forest"], "Use": "Primary buttons, links, selected navigation"},
+        {"Token": "Deep forest · sidebar", "Hex": TOKENS["forest_deep"], "Use": "Brand navigation surface"},
+        {"Token": "Leaf accent · decoration", "Hex": TOKENS["leaf_accent"], "Use": "Small decorative accents; not text on white"},
+        {"Token": "Ink · primary text", "Hex": TOKENS["ink"], "Use": "Headings and body text"},
+        {"Token": "Muted · supporting text", "Hex": TOKENS["muted"], "Use": "Captions and helper copy"},
+        {"Token": "Canvas · page background", "Hex": TOKENS["canvas"], "Use": "Main page surface"},
+        {"Token": "Surface · cards and fields", "Hex": TOKENS["surface"], "Use": "Cards and input surfaces"},
+        {"Token": "Control outline · focus support", "Hex": TOKENS["control_border"], "Use": "Visible boundaries and control outlines"},
+        {"Token": "Success", "Hex": TOKENS["forest"], "Use": "Text and icons on pale green"},
+        {"Token": "Warning", "Hex": TOKENS["warning_text"], "Use": "Text on pale amber"},
+        {"Token": "Error", "Hex": TOKENS["error_text"], "Use": "Text on pale red"},
+        {"Token": "Information", "Hex": TOKENS["info_text"], "Use": "Text on pale blue"},
+    ]
+    st.dataframe(color_rows, width="stretch", hide_index=True)
+
+    st.subheader("Typography, spacing, and elevation")
+    type_col, spacing_col, elevation_col = st.columns(3)
+    with type_col.container(border=True):
+        st.markdown("**Typography**")
+        st.write("Sans-serif system font. Body text starts at 16 px; captions stay at 14 px or larger.")
+        st.caption("Heading scale: 32 / 24 / 20 / 16 px with semibold-to-bold weights.")
+    with spacing_col.container(border=True):
+        st.markdown("**Spacing**")
+        st.write("4 · 8 · 12 · 16 · 24 · 32 · 48 px scale.")
+        st.caption("Use generous section spacing; keep related form labels and controls close.")
+    with elevation_col.container(border=True):
+        st.markdown("**Elevation**")
+        st.write("Flat page canvas, white bordered cards, no decorative shadows.")
+        st.caption("Use spacing and border contrast to show grouping; avoid color-only states.")
+
+    st.subheader("Reusable components")
+    st.markdown("**Buttons** · Use forest green for the main action, a bordered secondary action for alternatives, and a real disabled state when unavailable.")
+    primary_col, secondary_col, disabled_col = st.columns(3)
+    primary_col.button("Primary action", type="primary", icon=":material/check:", key="ds_primary_button")
+    secondary_col.button("Secondary action", icon=":material/arrow_forward:", key="ds_secondary_button")
+    disabled_col.button("Unavailable", disabled=True, key="ds_disabled_button")
+
+    st.markdown("**Inputs** · Keep visible labels, useful examples, and validation beside the field that needs attention.")
+    with st.form("ds_input_form"):
+        name = st.text_input("Student name", placeholder="Enter a name")
+        term = st.selectbox("Academic term", ["Choose a term", "Semester 1", "Semester 2"])
+        submitted = st.form_submit_button("Preview form action", icon=":material/send:")
+    if submitted:
+        if not name.strip() or term == "Choose a term":
+            feedback_state("error", "Add a student name and choose an academic term to continue.")
+        else:
+            feedback_state("success", "Form is complete. This preview does not save or send student data.")
+
+    st.markdown("**Cards and status** · Keep each course’s number, status label, and next step together.")
+    card_cols = st.columns(3)
+    for column, state, copy in zip(
+        card_cols,
+        [("Data Structures", 68), ("Database Systems", 88), ("Operating Systems", 92)],
+        ["Review upcoming classes", "Status is visible in text", "Check again next week"],
+    ):
+        with column.container(border=True):
+            st.subheader(state[0])
+            st.metric("Sample attendance", f"{state[1]}%")
+            status_badge(state[1], 75)
+            st.caption(copy)
+
+    st.markdown("**Navigation** · Keep the active selection clear and use familiar Material Symbols in the app menu.")
+    nav_sample = st.segmented_control(
+        "Navigation sample", ["Overview", "Courses", "Help"], default="Overview", key="ds_nav_sample"
+    )
+    st.caption(f"Selected destination: {nav_sample}")
+
+    st.markdown("**Feedback states** · Pair a meaningful icon with a short message and visible action when needed.")
+    feedback_choice = st.segmented_control(
+        "Preview a feedback state", ["Success", "Warning", "Error", "Info"], default="Success", key="ds_feedback_choice"
+    )
+    feedback_messages = {
+        "Success": ("success", "Attendance details are up to date."),
+        "Warning": ("warning", "This course is below the example target."),
+        "Error": ("error", "Attendance records could not load. Retry or return to the dashboard."),
+        "Info": ("info", "Sample content is illustrative and is not connected to HITAM systems."),
+    }
+    feedback_state(*feedback_messages[feedback_choice])
+
+    st.subheader("Contrast checker")
+    st.write("Try a foreground and background pair. The live check uses WCAG contrast ratios.")
+    foreground_col, background_col = st.columns(2)
+    foreground = foreground_col.color_picker("Text or icon color", "#17251C", key="ds_foreground")
+    background = background_col.color_picker("Background color", "#FFFFFF", key="ds_background")
+    ratio = contrast_ratio(foreground, background)
+    ratio_col, target_col = st.columns(2)
+    ratio_col.metric("Current contrast", f"{ratio:.2f}:1")
+    target_col.metric("WCAG AA body text", "4.5:1 minimum")
+    if ratio >= 4.5:
+        feedback_state("success", "This color pair meets the WCAG AA contrast ratio for normal text.")
+    elif ratio >= 3:
+        feedback_state("warning", "This pair meets 3:1 for large text and meaningful controls, but not normal body text.")
+    else:
+        feedback_state("error", "This pair does not meet the 3:1 minimum for large text or meaningful control boundaries.")
+    st.caption("Contrast checks cover these selected colors only; they are not a complete accessibility audit of every browser state.")
 
 st.divider()
 st.caption("Concept prototype · Information is illustrative and not connected to HITAM systems.")

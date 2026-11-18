@@ -2,11 +2,19 @@
 
 A Streamlit prototype for a student portal redesign. This is a design demo and is not connected to HITAM systems.
 
+## Portfolio tasks
+
+- [Task 03 — Information architecture and wireframes](TASK3_IA_WIREFRAMES.md)
+- [Task 04 — Accessible design system](DESIGN_SYSTEM.md)
+- [Open the live prototype](https://hitam-student-app-redesign-hzapp6mecm8fcswqcuui3nn.streamlit.app/)
+
 ## Contents
 
 - `TASK2.py` — the Streamlit app
 - `assets/hitam-logo.png` — HITAM logo from the [official website](https://hitam.org/)
 - `.streamlit/config.toml` — green, high-contrast theme
+- `design_system.py` and `DESIGN_SYSTEM.md` — reusable UI patterns, tokens, and contrast documentation
+- `TASK3_IA_WIREFRAMES.md` — user journey, screen inventory, and wireframes
 - `requirements.txt` — pinned Streamlit dependency
 
 All student, academic, timetable, results, transport, and hostel details are illustrative sample data. They are not live HITAM records.
