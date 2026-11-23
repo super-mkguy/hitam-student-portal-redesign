@@ -72,12 +72,14 @@ if page == "Dashboard":
     st.space("small")
 
     st.subheader("Quick access", icon=":material/bolt:")
-    c1, c2, c3 = st.columns(3)
+    c1, c2, c3, c4 = st.columns(4)
     with c1:
-        st.button("Time Table", icon=":material/calendar_today:", width="stretch", key="quick_timetable", on_click=_set_portal_page, args=("Time Table",))
+        st.button("Attendance", type="primary", icon=":material/bar_chart:", width="stretch", key="quick_attendance", on_click=_set_portal_page, args=("Attendance",))
     with c2:
-        st.button("Assignments", icon=":material/assignment:", width="stretch", key="quick_assignments", on_click=_set_portal_page, args=("Assignments",))
+        st.button("Time Table", icon=":material/calendar_today:", width="stretch", key="quick_timetable", on_click=_set_portal_page, args=("Time Table",))
     with c3:
+        st.button("Assignments", icon=":material/assignment:", width="stretch", key="quick_assignments", on_click=_set_portal_page, args=("Assignments",))
+    with c4:
         st.button("Feedback", icon=":material/chat:", width="stretch", key="quick_feedback", on_click=_set_portal_page, args=("Feedback",))
 
     st.space("medium")

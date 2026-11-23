@@ -6,6 +6,7 @@ A Streamlit prototype for a student portal redesign. This is a design demo and i
 
 - [Task 03 — Information architecture and wireframes](TASK3_IA_WIREFRAMES.md)
 - [Task 04 — Accessible design system](DESIGN_SYSTEM.md)
+- [Task 05 — Usability test and portfolio case study](TASK5_CASE_STUDY.md)
 - [Open the live prototype](https://hitam-student-app-redesign-hzapp6mecm8fcswqcuui3nn.streamlit.app/)
 
 ## Contents
