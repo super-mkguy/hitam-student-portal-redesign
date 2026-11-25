@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Task 5 usability test and case study for a HITAM student portal redesign concept, including the five tasks, outcomes from three testers, and evidence-led prototype revisions.">
+  <title>Task 5 — HITAM Portal Usability Case Study</title>
+  <style>
+    :root{color-scheme:light;--ink:#17251c;--muted:#526157;--green:#155b37;--green-dark:#10472d;--pale:#e8f2e9;--canvas:#f3f6f4;--line:#cbd6ce;--warning:#8b3026;--warning-bg:#fff1ee;--white:#fff}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+    a{color:var(--green-dark);text-underline-offset:3px}
+    a:focus-visible,button:focus-visible{outline:3px solid #cf5a27;outline-offset:3px}
+    .top{background:var(--green-dark);color:var(--white);padding:clamp(2rem,6vw,5rem) max(1.2rem,calc((100vw - 1050px)/2))}
+    .eyebrow{font-size:.8rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#d7eadb}
+    h1{max-width:850px;margin:.4rem 0 1rem;font-size:clamp(2.1rem,6vw,3.7rem);line-height:1.08}
+    .top p{max-width:780px;font-size:1.1rem;color:#f3f8f4}
+    .top a{color:#fff}
+    .links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+    .button{display:inline-block;padding:.7rem 1rem;border:1px solid #c2ddc9;border-radius:.65rem;color:#fff;text-decoration:none;font-weight:700}
+    main{width:min(1050px,calc(100% - 2rem));margin:2rem auto 4rem}
+    section,.callout{background:var(--white);border:1px solid var(--line);border-radius:1rem;padding:clamp(1.1rem,3vw,2rem);margin:1rem 0;box-shadow:0 5px 18px #17251c0a}
+    h2{font-size:clamp(1.4rem,3vw,2rem);line-height:1.2;margin:0 0 1rem}
+    h3{font-size:1.15rem;margin:1.4rem 0 .4rem}
+    p{margin:.45rem 0 1rem}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.8rem}
+    .tile{background:var(--pale);border-radius:.75rem;padding:1rem}
+    .tile strong{display:block;color:var(--green-dark)}
+    .callout{border-left:6px solid var(--green);background:#f8fbf8}
+    .warning{border-left-color:#b43f31;background:var(--warning-bg)}
+    .flow{font-weight:750;color:var(--green-dark)}
+    .table-wrap{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;min-width:690px}
+    th,td{text-align:left;vertical-align:top;padding:.75rem;border-bottom:1px solid var(--line)}
+    th{background:var(--pale);color:var(--ink)}
+    .status{font-weight:750}
+    figure{margin:0}
+    figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:.75rem}
+    figcaption{margin-top:.7rem;color:var(--muted);font-size:.92rem}
+    ul{padding-left:1.3rem}
+    li{margin:.35rem 0}
+    footer{background:#e4ebe5;color:var(--muted);padding:1.4rem max(1rem,calc((100vw - 1050px)/2));font-size:.95rem}
+    @media(max-width:600px){main{width:min(100% - 1rem,1050px);margin-top:.5rem}section,.callout{border-radius:.75rem}.top{padding:2rem 1rem}.button{width:100%;text-align:center}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="eyebrow">Task 05 · Usability test and portfolio case study</div>
+    <h1>HITAM Student Portal Redesign</h1>
+    <p>Testing a student’s journey to check attendance, find a timetable, and submit feedback. Three individual testers attempted five tasks; this page records the outcomes and the prototype changes made in response.</p>
+    <div class="links">
+      <a class="button" href="https://hitam-student-app-redesign-hzapp6mecm8fcswqcuui3nn.streamlit.app/">Open the interactive prototype</a>
+      <a class="button" href="https://github.com/super-mkguy/hitam-student-portal-redesign">View the source repository</a>
+    </div>
+  </header>
+  <main>
+    <section aria-labelledby="overview">
+      <h2 id="overview">Project and user journey</h2>
+      <div class="grid">
+        <div class="tile"><strong>Target user</strong>A student checking academic status on a phone or laptop.</div>
+        <div class="tile"><strong>Primary goal</strong>Understand attendance for one course and decide what to do next.</div>
+        <div class="tile"><strong>Test sample</strong>Three individual testers, recorded anonymously as P1–P3.</div>
+      </div>
+      <p class="flow">Dashboard → Attendance → choose a course → understand the status → take a next step</p>
+      <div class="callout warning"><strong>Prototype scope:</strong> This concept is not connected to HITAM systems. All attendance, course, timetable, and feedback content is illustrative. The 75% example target is not confirmed HITAM policy.</div>
+    </section>
+
+    <section aria-labelledby="tasks">
+      <h2 id="tasks">Five usability tasks and success measures</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Task</th><th>Scenario</th><th>Success measure</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1 · Find attendance</th><td>Starting at the dashboard, find Data Structures attendance and say what the portal reports.</td><td>Finds the course and reports 64% and “Below target.” Target: ≤60 sec.</td></tr>
+          <tr><th scope="row">2 · Check target</th><td>Check whether Database Systems is on track against the example target.</td><td>Finds 88% and interprets the visible status correctly. Target: ≤45 sec.</td></tr>
+          <tr><th scope="row">3 · Recover</th><td>With the unavailable-record preview enabled, show how to recover.</td><td>Understands the error, retries, and sees course details return. Target: ≤45 sec.</td></tr>
+          <tr><th scope="row">4 · Find timetable</th><td>From attendance details, find when Data Structures meets.</td><td>Opens the timetable and identifies a course time. Target: ≤60 sec.</td></tr>
+          <tr><th scope="row">5 · Send feedback</th><td>Choose a term, give a rating, and submit a short non-personal comment.</td><td>Completes the form and sees the confirmation. Target: ≤90 sec.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="muted">The original success goal was at least 2 of 3 unassisted completions per task, with zero critical errors. Times and detailed hesitation notes were not captured in these sessions.</p>
+    </section>
+
+    <section aria-labelledby="findings">
+      <h2 id="findings">Results from three testers</h2>
+      <p>Only the outcomes below were recorded. “Completed” does not imply “unassisted” unless the notes explicitly say so.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Task</th><th>P1</th><th>P2</th><th>P3</th><th>Summary</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">1 · Find attendance</th><td>Found</td><td>Found</td><td>Found</td><td>3/3 found it. Hint use and time not recorded.</td></tr>
+          <tr><th scope="row">2 · Check target</th><td>Needed hint</td><td>Needed hint</td><td>Needed hint</td><td>3/3 needed a hint. Hint wording and point of confusion not recorded.</td></tr>
+          <tr><th scope="row">3 · Recover</th><td>Not completed</td><td>Not completed</td><td>Not completed</td><td>0/3 completed it. The specific blocker and time were not recorded.</td></tr>
+          <tr><th scope="row">4 · Find timetable</th><td>Found</td><td>Found</td><td>Found</td><td>3/3 found it. Hint use and time not recorded.</td></tr>
+          <tr><th scope="row">5 · Submit feedback</th><td>Submitted</td><td>Submitted</td><td>Submitted</td><td>3/3 submitted successfully. Hint use and time not recorded.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout"><strong>What the results mean:</strong> Task 2 had 0/3 reported unassisted completions because all testers needed a hint. Task 3 had 0/3 completions. For Tasks 1, 4, and 5, the notes confirm completion but do not say whether help was used.</div>
+      <p class="muted">No names, contact details, identifying quotes, elapsed times, exact hint wording, or reasons for difficulty were supplied. This small sample is directional and not representative of all HITAM students.</p>
+    </section>
+
+    <section aria-labelledby="evidence">
+      <h2 id="evidence">Before and after</h2>
+      <figure>
+        <img src="../task-05-before-after.svg" alt="Schematic comparison of the earlier attendance overview and revised flow with a direct dashboard shortcut, course-level status, clearer preview target guidance, and an error recovery state with Retry emphasized.">
+        <figcaption>Schematic based on repository versions; these are not screenshots from the testers.</figcaption>
+      </figure>
+      <h3>Changes made from the findings</h3>
+      <ul>
+        <li><strong>Task 2:</strong> Attendance now explains that the example target is not confirmed HITAM policy and defines “at or above” versus “below.”</li>
+        <li><strong>Task 3:</strong> The error message names the recovery choices and makes Retry the primary action.</li>
+        <li>Status is communicated with text as well as color, and the dashboard has a direct Attendance shortcut.</li>
+      </ul>
+      <p class="muted">These are provisional changes. Because the exact confusion points were not captured, Tasks 2 and 3 need a follow-up test before claiming the changes solved the problems.</p>
+    </section>
+
+    <section aria-labelledby="priorities">
+      <h2 id="priorities">Priorities and next test</h2>
+      <ol>
+        <li><strong>Highest priority — Task 3:</strong> Watch where the recovery attempt stops, then refine the error guidance from that observation.</li>
+        <li><strong>High priority — Task 2:</strong> Ask what was unclear before offering a hint, then see if the added target explanation helps.</li>
+        <li><strong>Improve measurement:</strong> Record hint use and elapsed time for every task in future sessions.</li>
+        <li><strong>Verify policy:</strong> Confirm the real attendance threshold with HITAM before using the concept in production.</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="protocol">
+      <h2 id="protocol">How the sessions were recorded</h2>
+      <p>Participants were labeled P1, P2, and P3. Notes were limited to task outcomes and did not include personal details. The reported session notes were brief; no detailed action log or participant quotations were available, so none are invented here.</p>
+      <p>The moderator’s intended introduction was: “I’m evaluating the prototype, not you. Some content is sample data and nothing is sent to HITAM. Please think aloud as you go. You can stop at any time. I’ll take anonymous notes and won’t record your name or student details.”</p>
+    </section>
+  </main>
+  <footer>
+    <strong>Task 5 · HITAM Student Portal Redesign</strong><br>
+    <a href="https://github.com/super-mkguy/hitam-student-portal-redesign/blob/main/TASK5_CASE_STUDY.md">Detailed case-study notes</a> ·
+    <a href="https://github.com/super-mkguy/hitam-student-portal-redesign">Project repository</a> ·
+    <a href="https://hitam-student-app-redesign-hzapp6mecm8fcswqcuui3nn.streamlit.app/">Interactive prototype</a>
+  </footer>
+</body>
+</html>
