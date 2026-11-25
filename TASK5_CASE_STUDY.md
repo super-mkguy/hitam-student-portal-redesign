@@ -1,14 +1,14 @@
 # HITAM Student Portal Redesign — Usability Test & Case Study
 
-**Task 05 · Case-study draft, awaiting three real user sessions**  
+**Task 05 · Usability study with three individual testers**
 **Interactive prototype:** [Open the public HITAM portal](https://hitam-student-app-redesign-hzapp6mecm8fcswqcuui3nn.streamlit.app/)  
-**Current testing state:** The test plan and revised prototype are ready. Three-participant sessions have not been completed, so this draft reports no participant findings or completion rates.
+**Current testing state:** Three individual testers attempted the five tasks. Results below reflect only the outcomes provided; elapsed times, exact hints, and reasons for difficulty were not recorded.
 
-> **Important:** Do not present this as completed user testing until the anonymous session sheet below has real observations for three testers. The prototype revisions currently shown are based on the prior accessibility work and a documented heuristic walkthrough, not fabricated participant feedback.
+> **Study note:** The three testers are labeled P1–P3. Where notes only say “was able to find” or “submitted successfully,” hint use was not specified, so those outcomes are not counted as confirmed unassisted completions.
 
 ## Short explanation
 
-This case study follows one student goal: check course attendance and decide what to do next. Earlier iterations defined the flow, added a forest-green design system, and built an interactive attendance prototype. This final step packages the before/after evidence, five moderated task scenarios, measurable success criteria, and an anonymous results sheet. The next revision will be based on real session evidence.
+This case study follows one student goal: check course attendance and decide what to do next. Three individual testers tried five tasks. All three needed a hint on Task 2 and could not complete Task 3. The prototype now explains the preview target more plainly and gives Retry stronger emphasis. The reasons for those outcomes still need to be explored in a follow-up test.
 
 ## Project overview
 
@@ -26,12 +26,15 @@ This case study follows one student goal: check course attendance and decide wha
 | The portal task flow includes attendance, timetable, assignments, and feedback. | A student needs a short route from status to action. | Made Attendance a direct Dashboard quick action and added course detail with timetable/advisor routes. | Measure unassisted completion and time for Tasks 1, 2, and 4. |
 | Heuristic walkthrough of the previous Attendance page: it showed an aggregate metric and a plain course table, without a course-level recovery step or an unavailable-record state. | A percentage alone does not explain what to do, and missing data needs recovery. | Added selectable course detail, attended/held counts, visible status text, next steps, and a simulated load-error state with Retry and Dashboard actions. | Measure whether testers interpret the number and recover from Task 3 without moderator help. |
 | Earlier wireframe work used 75% as a placeholder; no official HITAM attendance rule was verified. | A prototype value could be mistaken for college policy. | Label the control as a preview target and disclose that policy needs verification. | Ask testers what they think the threshold represents; confirm it with HITAM before any production use. |
+| Three testers completed Tasks 1, 4, and 5; the notes do not say whether hints were used or how long tasks took. | Those tasks were completed by all three, but unassisted success and efficiency cannot be measured from these notes. | Record the 3/3 reported completion and mark hint use/time as not recorded. | Capture hint use and elapsed time during the next round. |
+| All three testers needed a hint on Task 2. | This task has a repeated assistance need, but the hint and point of confusion were not recorded. | Added a direct explanation of the example target and its status outcomes. | Re-test and ask what was unclear before giving a hint. |
+| All three testers were unable to complete Task 3. | The recovery task is a high-priority problem; the specific blocker is unknown. | Clarified the error guidance and emphasized Retry as the primary action. | Observe where each tester gets stuck and whether Retry works as expected. |
 
-The heuristic walkthrough is a design inspection, not a user study. No participant observations are claimed in this table.
+The earlier heuristic walkthrough is design inspection evidence; the last three rows are reported participant outcomes. The notes contain outcomes only, not times or detailed observations.
 
 ## Before and after
 
-The comparison below reconstructs the baseline from the earlier repository version and the updated flow from the current public prototype. It is a schematic, not a participant screenshot.
+The comparison below reconstructs the baseline from the earlier repository version and the updated flow from the current prototype. It is a schematic, not a participant screenshot. The current version includes clearer Task 2 target guidance and a more prominent Task 3 Retry action in response to the reported outcomes.
 
 ![Schematic before-and-after comparison of the HITAM attendance prototype](docs/task-05-before-after.svg)
 
@@ -39,7 +42,9 @@ The comparison below reconstructs the baseline from the earlier repository versi
 
 - **Before:** dashboard access relied on the main menu; the Attendance page showed an aggregate and a plain table.
 - **After:** Dashboard has a prominent Attendance shortcut; students select a course, see the calculation and text status, and get a next step.
+- **Task 2 update:** The attendance target now explains the “at or above” and “below target” labels directly and says the value is not confirmed HITAM policy.
 - **Recovery:** an unavailable-record preview shows an explanation plus Retry and Back to Dashboard, replacing the unavailable course detail.
+- **Task 3 update:** The error message explains the recovery choices and Retry is the primary action.
 - **Accessibility:** color is paired with status text, controls have visible labels, the green-on-light and white-on-green pairs meet the documented contrast targets, and the app uses native keyboard-operable controls.
 
 ## Five moderated usability tasks
@@ -56,6 +61,8 @@ Read each scenario as written. Let the participant work without hints unless the
 
 **Overall success criteria:** Record completion for each task as unassisted, completed with a hint, or not completed. Track time, wrong turns, and critical errors separately. For the three-person sample, the initial design goal is at least **2 of 3 unassisted completions per task** and **zero critical errors**; any task with fewer than 2 unassisted completions, repeated confusion, or a critical error becomes a revision candidate. This small sample is directional and is not statistically representative.
 
+From the notes provided, Task 2 had **0 of 3 unassisted completions** because all three needed a hint, and Task 3 had **0 of 3 completions**. Unassisted completion cannot be determined for Tasks 1, 4, or 5 because hint use was not specified.
+
 ## Session protocol and anonymous observation sheet
 
 ### Moderator opening
@@ -66,34 +73,45 @@ Use participant codes **P1**, **P2**, and **P3** only. Record device class (phon
 
 Before each session, open a fresh browser session, leave the attendance target at its default 75, and leave the unavailable-record preview switched off. For Task 3 only, the moderator should turn on the preview switch immediately before reading the task prompt; do not explain what the screen should say.
 
-### Participant results — fill only after real sessions
+### Participant results
 
-For each cell, record `U` (unassisted), `H` (needed a hint), or `N` (not completed), plus elapsed time. Add a brief, anonymous observation in the notes column. Leave untested cells blank.
+The notes supplied for these sessions did not include elapsed times, the text of the Task 2 hints, or the reasons Task 3 was not completed. “Completed” does not mean “unassisted” unless that was explicitly recorded.
 
-| Participant code | Device / familiarity (optional, broad only) | Task 1 | Task 2 | Task 3 | Task 4 | Task 5 | Most important hesitation or quote paraphrase |
-|---|---|---|---|---|---|---|---|
-| P1 |  |  |  |  |  |  |  |
-| P2 |  |  |  |  |  |  |  |
-| P3 |  |  |  |  |  |  |  |
+| Participant code | Task 1 | Task 2 | Task 3 | Task 4 | Task 5 | Time / hint details / reason |
+|---|---|---|---|---|---|---|
+| P1 | Completed; hint use not recorded | Needed a hint | Not completed | Completed; hint use not recorded | Submitted successfully; hint use not recorded | Not recorded |
+| P2 | Completed; hint use not recorded | Needed a hint | Not completed | Completed; hint use not recorded | Submitted successfully; hint use not recorded | Not recorded |
+| P3 | Completed; hint use not recorded | Needed a hint | Not completed | Completed; hint use not recorded | Submitted successfully; hint use not recorded | Not recorded |
+
+### Outcome summary
+
+| Task | Reported outcome | What can be concluded |
+|---:|---|---|
+| 1 · Find attendance | 3/3 were able to find it | Completed by all three; hint use and time were not recorded. |
+| 2 · Check the example target | 3/3 needed a hint | No unassisted completions were reported; hint wording and point of confusion were not recorded. |
+| 3 · Recover from unavailable records | 0/3 completed | All three were unable to complete it; the specific blocker was not recorded. |
+| 4 · Find the timetable | 3/3 were able to find it | Completed by all three; hint use and time were not recorded. |
+| 5 · Submit feedback | 3/3 submitted successfully | Successful submissions were reported; hint use, time, and understanding of the confirmation were not recorded. |
 
 ### Observation log
 
-Duplicate this row for each observation. Write what happened, not an interpretation alone. Do not include personal data.
+The supplied notes contain aggregate outcomes but no detailed actions or hesitation notes. The two entries below preserve what was reported without guessing at the cause.
 
 | Participant | Task | Observed action / hesitation | Expected result (participant’s words or paraphrase) | Outcome / time / hint | Design implication |
 |---|---|---|---|---|---|
-|  |  |  |  |  |  |
+| P1–P3 | 2 | All three needed a hint | Not recorded | Hint needed; time not recorded | Explore what required the hint; target guidance was clarified provisionally. |
+| P1–P3 | 3 | All three were unable to complete the task | Not recorded | Not completed; time not recorded | Observe the exact point of difficulty in a retest; error guidance and Retry emphasis updated provisionally. |
 
 ## Issue prioritization
 
-The current items below are **heuristic review candidates**, not user-test findings. After the sessions, replace or reorder them based on severity, frequency, and task impact.
+The first issue below comes from the earlier heuristic review. The repeated Task 2 and Task 3 outcomes are reported tester findings; their specific causes were not captured.
 
-| Priority | Candidate issue | Evidence source | Current response | Revisit after sessions |
+| Priority | Candidate issue | Evidence source | Current response | Follow-up |
 |---|---|---|---|---|
-| P1 | Students may overlook the attendance destination when they start at Dashboard. | Heuristic walkthrough of the previous navigation. | Prominent Attendance quick action added to Dashboard. | Check Task 1 route and time; keep or change the shortcut based on observed behavior. |
-| P1 | An aggregate/table view may not help a student decide what to do for one course. | Baseline interface inspection; not a participant result. | Course selector, attended/held calculation, text status, and next-step actions added. | Check Tasks 1, 2, and 4 for misinterpretation, status comprehension, and action choice. |
-| P1 | Unavailable records previously had no explicit recovery state. | Baseline interface inspection. | Added error message, Retry, and Back to Dashboard. | Check Task 3; note whether testers recognize the error and recover. |
-| P2 | The 75% example can be mistaken for official policy. | Policy source not available in the project. | Labeled as a preview-only placeholder. | Verify with HITAM; test participant understanding of the label. |
+| P1 | None of the three testers completed the unavailable-record task. | Reported Task 3 result; exact blocker not captured. | Clarified error guidance and made Retry the primary action. | Re-test and record the exact point of failure before drawing conclusions about cause. |
+| P1 | All three testers needed a hint to check the example target. | Reported Task 2 result; hint text and confusion point not captured. | Added a direct explanation of “at or above” versus “below” the example target. | Re-test and capture the unassisted outcome and what was unclear. |
+| P2 | Hint use and time are unknown for Tasks 1, 4, and 5. | Notes report completion/submission only. | Avoided labeling these outcomes unassisted. | Record hints and elapsed time per task in the next round. |
+| P2 | The 75% example can be mistaken for official policy. | Policy source not available in the project. | Labeled as a preview-only example and stated it is not confirmed HITAM policy. | Verify with HITAM; test participant understanding of the label. |
 
 ## Revision log
 
@@ -103,14 +121,17 @@ The current items below are **heuristic review candidates**, not user-test findi
 | R2 | Added a recoverable unavailable-record state with Retry and Dashboard navigation. | Make the failure path explicit and recoverable. | Heuristic design decision; the interaction is present in the prototype, awaiting user validation. |
 | R3 | Added an Attendance quick action to the Dashboard. | Reduce navigation effort to the main task. | Added during this iteration; test against Task 1. |
 | R4 | Paired status color with text and labeled the 75% target as illustrative. | Avoid color-only communication and unsupported policy claims. | Contrast pairs documented; policy remains unverified. |
+| R5 | Added plain-language guidance for the example target and what “at or above” versus “below” means. | All three testers needed a hint on Task 2; exact confusion point was not recorded. | Provisional response; re-test to see if it helps. |
+| R6 | Clarified the unavailable-record message and made Retry the primary action. | All three testers were unable to complete Task 3; exact blocker was not recorded. | Provisional response; observe and re-test the recovery path. |
 
 ## Limitations and next step
 
-- Three participant sessions and their observations are still required before this can be presented as a completed usability study.
+- Only task outcomes were captured. Times, the Task 2 hint wording, the Task 3 blockers, and detailed observations were not recorded, so explanations for the results remain uncertain.
 - The sample is small; report counts and examples, not broad claims about all HITAM students.
+- Re-test Tasks 2 and 3 after these changes; record hint use, elapsed time, and the exact step where a tester hesitates or gets stuck.
 - Confirm the real attendance threshold, schedule, and student-support route with HITAM.
 - The prototype is not connected to student records and does not persist feedback.
-- After entering the three real sessions above, revise the highest-impact issue and update the before/after evidence with the observed change.
+- The Task 2 and Task 3 UI changes are provisional; do not claim they fixed the problems until a follow-up test supports that conclusion.
 
 ## Supporting project work
 

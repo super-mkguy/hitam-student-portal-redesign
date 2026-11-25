@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1240" height="900" viewBox="0 0 1240 900" role="img" aria-labelledby="title desc">
   <title id="title">HITAM attendance prototype before and after</title>
-  <desc id="desc">Schematic comparison: the baseline dashboard linked to a total and plain table; the revised flow adds a direct attendance entry, selectable course detail, an explicit status, recovery actions, and a simulated error state.</desc>
+  <desc id="desc">Schematic comparison: the baseline dashboard linked to a total and plain table; the revised flow adds a direct attendance entry, selectable course detail, an explicit target explanation, recovery actions, and a simulated error state with Retry emphasized.</desc>
   <defs><style>
     .canvas{fill:#f3f6f4}.panel{fill:#fff;stroke:#cbd6ce;stroke-width:2}.head{font:700 24px Arial,sans-serif;fill:#17251c}.sub{font:16px Arial,sans-serif;fill:#526157}.section{font:700 19px Arial,sans-serif;fill:#17251c}.body{font:16px Arial,sans-serif;fill:#27372c}.small{font:14px Arial,sans-serif;fill:#526157}.brand{font:700 16px Arial,sans-serif;fill:#fff}.rule{stroke:#cbd6ce;stroke-width:2}.forest{fill:#155b37}.pale{fill:#e8f2e9}.error{fill:#fff1ee;stroke:#cb796c;stroke-width:2}.errortext{font:700 14px Arial,sans-serif;fill:#8b3026}.warn{font:700 14px Arial,sans-serif;fill:#8b3026}.tag{font:700 14px Arial,sans-serif;fill:#155b37}.muted{font:14px Arial,sans-serif;fill:#68756b}.white{fill:#fff}.arrow{stroke:#155b37;stroke-width:3;fill:none}
   </style></defs>
@@ -28,18 +28,19 @@
   <text x="82" y="674" class="section">Heuristic gaps</text><text x="82" y="710" class="body">• No direct attendance shortcut on Dashboard</text><text x="82" y="744" class="body">• No course-level next step or load-error recovery</text><text x="82" y="772" class="small">No participant findings are claimed here.</text>
   <rect x="638" y="112" width="570" height="60" rx="18" class="forest"/><rect x="638" y="152" width="570" height="20" class="forest"/>
   <text x="664" y="151" class="brand">AFTER · Revised concept</text>
-  <text x="664" y="202" class="sub">Quick entry, course detail, plain-language status, and recovery</text>
+  <text x="664" y="202" class="sub">Quick entry, clear target guidance, course detail, and recovery</text>
   <rect x="664" y="226" width="518" height="62" rx="12" class="pale"/><text x="686" y="264" class="tag">Dashboard quick action: Attendance</text><text x="1135" y="264" class="tag">›</text>
   <rect x="664" y="308" width="518" height="65" rx="12" class="panel"/>
   <text x="686" y="337" class="small">CHOOSE A COURSE</text><text x="686" y="360" class="section">Data Structures</text><text x="1136" y="351" class="body">⌄</text>
   <rect x="664" y="391" width="518" height="151" rx="14" class="panel"/>
   <text x="686" y="425" class="section">Current attendance</text><text x="686" y="477" class="head" style="font-size:38px">64%</text><text x="814" y="470" class="body">9 of 14 classes attended</text>
   <rect x="686" y="496" width="468" height="10" rx="5" fill="#dce6dd"/><rect x="686" y="496" width="300" height="10" rx="5" fill="#c45b4e"/>
-  <text x="686" y="528" class="warn">Below target · target is an illustrative setting</text>
+  <text x="686" y="528" class="warn">Below target · example only; not confirmed HITAM policy</text>
+  <text x="686" y="550" class="small">At or above target = on track · below = below target</text>
   <rect x="664" y="558" width="518" height="113" rx="14" class="pale"/>
   <text x="686" y="591" class="section">What you can do next</text><text x="686" y="623" class="body">View upcoming classes or contact your advisor.</text>
   <rect x="686" y="638" width="202" height="0" rx="8" class="forest"/>
   <rect x="664" y="687" width="518" height="118" rx="14" class="error"/>
-  <text x="686" y="722" class="errortext">When records are unavailable</text><text x="686" y="753" class="body">Explain the issue; offer Retry and Back to Dashboard.</text><text x="686" y="784" class="small">Error state replaces missing course details.</text>
+  <text x="686" y="722" class="errortext">When records are unavailable</text><text x="686" y="753" class="body">Choose Retry loading records to try again.</text><text x="686" y="784" class="small">Retry is primary; Dashboard remains an alternate route.</text>
   <text x="40" y="878" class="muted">Evidence source: baseline repository version and current public prototype. The updated public page is linked in the case study.</text>
 </svg>

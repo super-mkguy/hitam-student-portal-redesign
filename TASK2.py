@@ -179,7 +179,11 @@ elif page == "Attendance":
     st.progress(overall / 100, text="Across 6 illustrative courses")
 
     target = st.slider("Preview attendance target", 50, 100, 75, key="attendance_target")
-    st.write("The target is an example for this prototype; verify the official HITAM policy before using it.")
+    st.info(
+        f"For this prototype, {target}% is the example target. "
+        "At or above the target means on track; below it means below target. "
+        "This is not confirmed HITAM policy."
+    )
     selected_course_name = st.selectbox(
         "Choose a course", [str(course["name"]) for course in courses], key="attendance_course"
     )
@@ -188,10 +192,15 @@ elif page == "Attendance":
     simulate_error = st.toggle("Preview: simulate unavailable attendance records", key="simulate_attendance_error")
 
     if simulate_error:
-        feedback_state("error", "Attendance records could not load. Retry or return to the dashboard.")
+        feedback_state(
+            "error",
+            "Attendance records could not load. Choose Retry loading records to try again, "
+            "or return to the dashboard.",
+        )
         retry_col, dashboard_col = st.columns(2)
         retry_col.button(
             "Retry loading records", icon=":material/refresh:",
+            type="primary",
             on_click=_retry_attendance_preview, key="attendance_retry",
         )
         dashboard_col.button(
